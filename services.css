@@ -147,6 +147,13 @@
 
 .badge-icon {
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-icon svg {
+    color: var(--primary-orange);
 }
 
 .badge-text {
@@ -291,6 +298,82 @@
     backdrop-filter: blur(8px);
 }
 
+/* ====================================
+   BOUTONS BÉNÉFICES - STYLE NEUMORPHIQUE
+   ==================================== */
+
+.benefits-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.benefit-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 131, 95, 0.05));
+    border: 1px solid rgba(255, 131, 95, 0.15);
+    border-radius: 16px;
+    cursor: default;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        8px 8px 20px rgba(255, 131, 95, 0.1),
+        -8px -8px 20px rgba(255, 255, 255, 0.8),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.7),
+        inset -2px -2px 6px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 131, 95, 0.08));
+    border-color: rgba(255, 131, 95, 0.25);
+    box-shadow: 
+        10px 10px 24px rgba(255, 131, 95, 0.15),
+        -10px -10px 24px rgba(255, 255, 255, 0.9),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.8),
+        inset -3px -3px 8px rgba(0, 0, 0, 0.03);
+}
+
+.benefit-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-orange), #ff9472);
+    border-radius: 0 4px 4px 0;
+    opacity: 0.8;
+}
+
+.benefit-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+/* Responsive pour les boutons bénéfices */
+@media (max-width: 768px) {
+    .benefits-buttons {
+        gap: 0.8rem;
+    }
+    
+    .benefit-btn {
+        padding: 1rem 1.5rem;
+    }
+    
+    .benefit-text {
+        font-size: 0.9rem;
+    }
+}
+
 
 
 /* ====================================
@@ -419,13 +502,19 @@
 
 
 /* Styles pour les highlights dans le hero modifié */
+.services-main-title .title-subtitle {
+    color: var(--primary-orange);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(255, 131, 95, 0.3);
+    opacity: 0.9;
+}
+
 .services-main-title .title-negative {
     color: #ff6b7d;
     font-weight: 900;
     text-shadow: 0 2px 8px rgba(255, 107, 125, 0.4);
-    text-decoration: line-through;
-    text-decoration-color: #ff4757;
-    text-decoration-thickness: 3px;
 }
 
 .services-description .highlight-negative {
@@ -606,6 +695,30 @@
 
 .guarantee-card:hover .card-image img {
     transform: scale(1.05);
+}
+
+/* Styles pour les nouvelles images de livrables */
+.deliverable-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 131, 95, 0.05));
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.deliverable-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(255, 131, 95, 0.1));
+}
+
+.guarantee-card:hover .deliverable-image {
+    transform: scale(1.1);
 }
 
 .card-content {
@@ -924,12 +1037,7 @@
     margin-bottom: 0.5rem !important;
 }
 
-/* Animation subtile pour les highlights au survol */
-.step-description .highlight-key:hover {
-    color: #ff6b47 !important;
-    transform: translateY(-1px) !important;
-    transition: all 0.2s ease !important;
-}
+/* Animation hover supprimée */
 
 /* Amélioration de la pause dramatique avec les tirets */
 .step-description {
@@ -980,6 +1088,506 @@
     display: flex;
     align-items: center;
     min-height: auto !important;
+}
+
+/* ====================================
+   SECTION PARTENAIRES HÉBERGEURS
+   ==================================== */
+
+.hosting-partners-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 131, 95, 0.1);
+}
+
+.partners-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.partners-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.partners-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.partners-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 249, 245, 0.6));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 131, 95, 0.08);
+    box-shadow: 
+        8px 8px 24px rgba(203, 213, 225, 0.15),
+        -8px -8px 24px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.partner-logo-card:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(255, 249, 245, 0.8));
+    border-color: rgba(255, 131, 95, 0.12);
+    box-shadow: 
+        12px 12px 32px rgba(203, 213, 225, 0.2),
+        -12px -12px 32px rgba(255, 255, 255, 1),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.9);
+}
+
+.partner-logo-container {
+    margin-bottom: 1.5rem;
+}
+
+.partner-logo-img {
+    width: 120px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    box-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.1),
+        -3px -3px 8px rgba(255, 255, 255, 0.9);
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.partner-logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        5px 5px 12px rgba(0, 0, 0, 0.15),
+        -5px -5px 12px rgba(255, 255, 255, 1);
+}
+
+.partner-info {
+    text-align: center;
+}
+
+.partner-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.partner-benefit {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    font-style: italic;
+    margin: 0;
+}
+
+.partners-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.partners-note {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments for partners section */
+@media (max-width: 768px) {
+    .hosting-partners-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+    
+    .partners-logos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .partner-logo-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .partner-logo-img {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-logos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ====================================
+   SECTION TÉMOIGNAGES DIAGNOSTIC IA
+   ==================================== */
+
+.testimonials-diagnostic-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, rgba(243, 230, 249, 0.04), rgba(255, 249, 245, 0.06));
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-diagnostic-section .testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.testimonials-header .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.testimonials-header .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonials-diagnostic-section .testimonials-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonials-diagnostic-section .testimonials-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.testimonials-diagnostic-section .testimonial-card {
+    min-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.testimonials-diagnostic-section .testimonial-content {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 131, 95, 0.02));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 131, 95, 0.08);
+    border-radius: 24px;
+    padding: 50px 40px;
+    box-shadow: 
+        12px 12px 40px rgba(0, 0, 0, 0.06),
+        -12px -12px 40px rgba(255, 255, 255, 0.9),
+        inset 3px 3px 10px rgba(255, 255, 255, 0.8),
+        inset -3px -3px 10px rgba(0, 0, 0, 0.02);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-diagnostic-section .testimonial-content::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 4rem;
+    font-family: 'Space Grotesk', serif;
+    color: var(--primary-orange);
+    opacity: 0.3;
+    font-weight: 900;
+}
+
+.testimonials-diagnostic-section .testimonial-quote {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-weight: 400;
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonials-diagnostic-section .testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonials-diagnostic-section .author-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        8px 8px 24px rgba(255, 131, 95, 0.3),
+        -8px -8px 24px rgba(255, 255, 255, 0.9),
+        inset 3px 3px 10px rgba(255, 255, 255, 0.7);
+    position: relative;
+    flex-shrink: 0;
+}
+
+.testimonials-diagnostic-section .author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.testimonials-diagnostic-section .author-info {
+    text-align: left;
+}
+
+.testimonials-diagnostic-section .author-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.testimonials-diagnostic-section .author-designation {
+    font-size: 1rem;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.testimonials-diagnostic-section .testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.testimonials-diagnostic-section .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 131, 95, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonials-diagnostic-section .dot.active {
+    background: var(--primary-orange);
+    transform: scale(1.2);
+}
+
+.testimonials-diagnostic-section .testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 131, 95, 0.05));
+    box-shadow: 
+        6px 6px 20px rgba(0, 0, 0, 0.08),
+        -6px -6px 20px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
+}
+
+.testimonials-diagnostic-section .testimonial-prev {
+    left: -80px;
+}
+
+.testimonials-diagnostic-section .testimonial-next {
+    right: -80px;
+}
+
+.testimonials-diagnostic-section .testimonial-nav:hover {
+    background: linear-gradient(145deg, var(--primary-orange), rgba(255, 148, 114, 0.9));
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 
+        8px 8px 24px rgba(255, 131, 95, 0.3),
+        -8px -8px 24px rgba(255, 255, 255, 0.8),
+        inset 2px 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.testimonials-diagnostic-section .testimonial-nav svg {
+    transition: transform 0.3s ease;
+}
+
+.testimonials-diagnostic-section .testimonial-nav:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .testimonials-diagnostic-section {
+        padding: 80px 0;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-content {
+        padding: 40px 30px;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-quote {
+        font-size: 1.2rem;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-prev {
+        left: -60px;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-next {
+        right: -60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-diagnostic-section {
+        padding: 60px 0;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-content {
+        padding: 30px 25px;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-quote {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-author {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .testimonials-diagnostic-section .author-info {
+        text-align: center;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-nav {
+        display: none;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-card {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-diagnostic-section .testimonial-content {
+        padding: 25px 20px;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-quote {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .testimonials-diagnostic-section .testimonial-content::before {
+        font-size: 3rem;
+        top: 15px;
+        left: 20px;
+    }
+    
+    .testimonials-diagnostic-section .author-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 18px;
+    }
+    
+    .testimonials-diagnostic-section .author-name {
+        font-size: 1rem;
+    }
+    
+    .testimonials-diagnostic-section .author-designation {
+        font-size: 0.85rem;
+    }
+}
+
+/* ====================================
+   SUPPRESSION FORCÉE DES ANIMATIONS CARTES DIAGNOSTIC
+   ==================================== */
+
+/* Supprimer TOUTES les animations sur les cartes des phases du diagnostic - SERVICES CSS */
+.step-item,
+.step-item *,
+.step-image,
+.step-image *,
+.step-image-container,
+.step-image-container *,
+.step-info,
+.step-info *,
+.step-content,
+.step-content *,
+.step-number,
+.step-title,
+.step-subtitle,
+.step-description {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.step-item:hover,
+.step-item:hover *,
+.step-image:hover,
+.step-image:hover *,
+.step-image-container:hover,
+.step-image-container:hover *,
+.step-info:hover,
+.step-info:hover *,
+.step-content:hover,
+.step-content:hover *,
+.step-number:hover,
+.step-title:hover,
+.step-subtitle:hover,
+.step-description:hover {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
 }
 
 /* ====================================

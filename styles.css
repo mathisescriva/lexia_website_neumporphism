@@ -88,7 +88,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1800px;
     height: 100%;
     margin: 0 auto;
     padding: 0 3rem;
@@ -454,7 +454,7 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
-    max-width: 600px;
+    max-width: 850px;
     
     /* Neumorphisme container */
     box-shadow:
@@ -5761,7 +5761,7 @@ body {
         -9px -9px 18px rgba(255, 255, 255, 0.8),
         inset 3px 3px 6px rgba(255, 131, 95, 0.05),
         inset -3px -3px 6px rgba(255, 255, 255, 0.9);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition supprimée pour éviter l'animation des cartes */
     border: 1px solid rgba(255, 255, 255, 0.5);
     overflow: hidden;
     display: flex;
@@ -5769,14 +5769,7 @@ body {
     justify-content: center;
 }
 
-.step-image-container:hover {
-    transform: translateY(-4px);
-    box-shadow: 
-        12px 12px 24px rgba(255, 131, 95, 0.15),
-        -12px -12px 24px rgba(255, 255, 255, 0.9),
-        inset 4px 4px 8px rgba(255, 131, 95, 0.08),
-        inset -4px -4px 8px rgba(255, 255, 255, 0.95);
-}
+/* Animation hover supprimée */
 
 /* Image dans le conteneur */
 .step-image-container img {
@@ -5822,18 +5815,11 @@ body {
         -4px -4px 8px rgba(255, 255, 255, 0.8),
         inset 2px 2px 4px rgba(255, 131, 95, 0.05),
         inset -2px -2px 4px rgba(255, 255, 255, 0.9);
-    transition: all 0.2s ease;
+    /* transition supprimée */
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.step-number:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        6px 6px 12px rgba(255, 131, 95, 0.15),
-        -6px -6px 12px rgba(255, 255, 255, 0.9),
-        inset 3px 3px 6px rgba(255, 131, 95, 0.08),
-        inset -3px -3px 6px rgba(255, 255, 255, 0.95);
-}
+/* Animation hover supprimée */
 
 .step-title {
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
@@ -5964,6 +5950,49 @@ body {
 
 .steps-button:active {
     transform: scale(0.95);
+}
+
+/* ====================================
+   SUPPRESSION FORCÉE DES ANIMATIONS CARTES DIAGNOSTIC
+   ==================================== */
+
+/* Supprimer TOUTES les animations sur les cartes des phases du diagnostic */
+.step-item,
+.step-item *,
+.step-image,
+.step-image *,
+.step-image-container,
+.step-image-container *,
+.step-info,
+.step-info *,
+.step-content,
+.step-content *,
+.step-number,
+.step-title,
+.step-subtitle,
+.step-description {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.step-item:hover,
+.step-item:hover *,
+.step-image:hover,
+.step-image:hover *,
+.step-image-container:hover,
+.step-image-container:hover *,
+.step-info:hover,
+.step-info:hover *,
+.step-content:hover,
+.step-content:hover *,
+.step-number:hover,
+.step-title:hover,
+.step-subtitle:hover,
+.step-description:hover {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
 }
 
 /* ===== RESPONSIVE HERO STYLE ===== */

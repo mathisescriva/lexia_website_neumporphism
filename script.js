@@ -347,6 +347,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Rediriger vers la page services
                 console.log('🔗 Redirection vers services.html');
                 window.location.href = 'services.html';
+            } else if (sectionId === 'diagnostic') {
+                // Rediriger vers la page diagnostic
+                console.log('🔗 Redirection vers diagnostic.html');
+                window.location.href = 'diagnostic.html';
             } else {
                 const targetSection = document.getElementById(sectionId);
                 

@@ -13,10 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navigation - mettre "Services" en actif
+    // Navigation - mettre l'onglet actif selon la page courante
     const navRadios = document.querySelectorAll('.radio-inputs .radio input');
+    const currentPage = window.location.pathname.split('/').pop();
+    
     navRadios.forEach(radio => {
-        if (radio.value === 'services') {
+        // Définir l'onglet actif selon la page courante
+        if ((currentPage === 'services.html' && radio.value === 'services') ||
+            (currentPage === 'diagnostic.html' && radio.value === 'diagnostic') ||
+            (currentPage === 'index.html' && radio.value === 'accueil') ||
+            (!currentPage && radio.value === 'accueil')) {
             radio.checked = true;
         }
         
@@ -26,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (sectionId === 'accueil') {
                     window.location.href = 'index.html';
+                } else if (sectionId === 'diagnostic') {
+                    window.location.href = 'diagnostic.html';
                 } else if (sectionId === 'services') {
                     // Rester sur cette page
                     window.scrollTo({ top: 0, behavior: 'smooth' });
