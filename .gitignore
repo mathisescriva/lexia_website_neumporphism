@@ -1,0 +1,16 @@
+# Exclure les fichiers vidéo volumineux
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+
+# Exclure les fichiers système
+.DS_Store
+Thumbs.db
+
+# Exclure les fichiers temporaires
+*.tmp
+*.temp 
