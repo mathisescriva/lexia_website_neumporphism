@@ -32,6 +32,440 @@ body {
 }
 
 /* ====================================
+   SECTION ACTIVATEUR FRANCE NUM
+   ==================================== */
+
+.france-num-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--cream-white) 0%, #f8f3ee 50%, var(--peach-light) 100%);
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.france-num-section::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 131, 95, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(243, 230, 249, 0.06) 0%, transparent 50%);
+    z-index: 0;
+    animation: floatBackground 20s ease-in-out infinite;
+}
+
+@keyframes floatBackground {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(10px, -15px) scale(1.02); }
+    50% { transform: translate(-5px, 10px) scale(0.98); }
+    75% { transform: translate(15px, 5px) scale(1.01); }
+}
+
+.france-num-split {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image à gauche */
+.france-num-image {
+    flex: 0 0 400px;
+}
+
+.image-container {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 
+        12px 12px 30px rgba(255, 131, 95, 0.15),
+        -12px -12px 30px rgba(255, 255, 255, 0.9),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.8),
+        inset -3px -3px 8px rgba(255, 131, 95, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 131, 95, 0.03), transparent, rgba(243, 230, 249, 0.03), transparent);
+    animation: rotate 30s linear infinite;
+    z-index: -1;
+}
+
+.image-container:hover {
+    box-shadow: 
+        16px 16px 40px var(--shadow-medium),
+        -16px -16px 40px rgba(255, 255, 255, 0.9),
+        inset 4px 4px 12px rgba(255, 255, 255, 0.9),
+        inset -4px -4px 12px rgba(255, 131, 95, 0.08);
+}
+
+.france-num-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Contenu à droite */
+.france-num-content {
+    flex: 1;
+}
+
+.france-num-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.france-num-title .title-highlight {
+    color: var(--primary-orange);
+}
+
+.france-num-description {
+    font-size: 18px;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    position: relative;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        6px 6px 20px rgba(255, 131, 95, 0.08),
+        -6px -6px 20px rgba(255, 255, 255, 0.8);
+}
+
+.france-num-description strong {
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+/* Photos de l'équipe */
+.team-photos {
+    margin: 30px 0;
+}
+
+.team-avatars {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.avatar-item {
+    transition: transform 0.3s ease;
+}
+
+.avatar-item:hover {
+    transform: translateY(-3px);
+}
+
+.avatar-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--pure-white);
+    box-shadow: 
+        6px 6px 15px rgba(255, 131, 95, 0.2),
+        -6px -6px 15px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.8),
+        inset -2px -2px 6px rgba(255, 131, 95, 0.1);
+    transition: all 0.3s ease;
+}
+
+.avatar-item:hover .avatar-image {
+    box-shadow: 
+        8px 8px 20px rgba(255, 131, 95, 0.3),
+        -8px -8px 20px rgba(255, 255, 255, 0.9),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.9),
+        inset -3px -3px 8px rgba(255, 131, 95, 0.15);
+}
+
+/* Bouton CTA */
+.france-num-cta {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ====================================
+   SECTION ACTUALITÉS
+   ==================================== */
+
+.news-section {
+    padding: 80px 0;
+    background: var(--cream-white);
+    margin: 60px 0;
+    position: relative;
+}
+
+.news-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.news-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.news-subtitle {
+    font-size: 18px;
+    color: var(--text-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.news-card {
+    background: linear-gradient(145deg, var(--pure-white), #f8f3ee);
+    border-radius: 25px;
+    padding: 0;
+    box-shadow: 
+        8px 8px 20px var(--shadow-light),
+        -8px -8px 20px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 6px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: 220px;
+}
+
+
+
+.news-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.news-badge.rd {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.news-badge.actus {
+    background: linear-gradient(135deg, var(--primary-orange), #ff6b4a);
+    color: white;
+}
+
+.news-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+.news-excerpt {
+    color: var(--text-medium);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}
+
+.news-category {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Styles pour les images et contenu des cartes actualités */
+.news-image {
+    flex: 0 0 35%;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+.news-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+}
+
+.news-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.news-card-link:hover .news-card {
+    transform: translateY(-5px);
+}
+
+.news-card-link:hover .news-card-image {
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .news-image {
+        flex: 0 0 35%;
+    }
+    
+    .news-card {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .news-title {
+        font-size: 32px;
+    }
+    
+    .news-card {
+        flex-direction: column;
+        height: auto;
+        min-height: 300px;
+    }
+    
+    .news-image {
+        flex: 0 0 160px;
+        height: 160px;
+    }
+    
+    .news-content {
+        padding: 20px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .france-num-split {
+        gap: 50px;
+    }
+    
+    .france-num-image {
+        flex: 0 0 300px;
+    }
+    
+    .france-num-title {
+        font-size: 30px;
+    }
+    
+    .team-avatars {
+        gap: 12px;
+    }
+    
+    .avatar-image {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .france-num-split {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .france-num-image {
+        flex: none;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .france-num-title {
+        font-size: 28px;
+    }
+    
+    .team-avatars {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .avatar-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+    
+    .france-num-description {
+        font-size: 16px;
+    }
+    
+    .france-num-cta {
+        justify-content: center;
+    }
+}
+
+/* ====================================
    NAVBAR NEUMORPHIQUE - COHÉRENTE AVEC LA DA
    ==================================== */
 
@@ -606,12 +1040,17 @@ body {
 
 /* Responsive nav menu styling */
 @media (min-width: 769px) {
-    .nav-menu.btn-group .btn:first-child {
-        margin-left: 0;
+    .radio-inputs {
+        flex-direction: row;
+        position: relative;
+        transform: translateX(0);
+        height: auto;
+        padding: 8px;
+        background: linear-gradient(145deg, var(--cream-white), #f0ebe6);
     }
     
-    .nav-menu.btn-group .btn:last-child {
-        margin-right: 0;
+    .nav-toggle {
+        display: none;
     }
 }
 
@@ -1079,16 +1518,26 @@ body {
     animation-delay: 1.6s;
 }
 
+/* Container pour les stats */
+.stats-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 1.5rem 0 1.8rem 0;
+    animation: slideUp 1s ease-out 0.7s both;
+    flex-wrap: wrap;
+}
+
 /* Statistique Subtile */
 .stats-highlight {
     display: flex;
     align-items: baseline;
     gap: 0.75rem;
-    margin: 1.5rem 0 1.8rem 0;
     opacity: 0.85;
-    animation: slideUp 1s ease-out 0.7s both;
     padding: 0.8rem 0;
     position: relative;
+    width: fit-content;
 }
 
 .stats-highlight::before {
@@ -1119,6 +1568,66 @@ body {
     letter-spacing: 0.025em;
     opacity: 0.85;
     line-height: 1.4;
+}
+
+/* Section notation Malt */
+.malt-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    border-radius: 20px;
+    box-shadow: 
+        4px 4px 12px rgba(255, 131, 95, 0.08),
+        -4px -4px 12px rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    width: fit-content;
+    opacity: 0.85;
+    flex-shrink: 0;
+}
+
+.malt-rating:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 
+        6px 6px 18px rgba(255, 131, 95, 0.12),
+        -6px -6px 18px rgba(255, 255, 255, 0.9);
+}
+
+.malt-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.malt-svg {
+    height: 20px;
+    width: auto;
+}
+
+.rating-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.stars {
+    display: flex;
+    gap: 1px;
+}
+
+.star {
+    color: #FFD700;
+    font-size: 14px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.rating-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-medium);
+    opacity: 0.8;
 }
 
 .stats-text .highlight-word {
@@ -1624,7 +2133,9 @@ body {
         gap: 1rem;
     }
     
-    .nav-menu {
+    /* Masquer le menu normal sur mobile et afficher le toggle */
+    
+    .radio-inputs {
         position: fixed;
         top: 75px;
         left: 0;
@@ -1636,7 +2147,7 @@ body {
         padding: 2rem;
         gap: 1rem;
         margin: 0;
-        background: #f8f8f8;
+        background: linear-gradient(145deg, var(--cream-white), #f0ebe6);
         backdrop-filter: blur(20px);
         border-radius: 0;
         box-shadow: 
@@ -1647,44 +2158,35 @@ body {
         z-index: 999;
     }
     
-    .nav-menu.active {
+    .radio-inputs.active {
         transform: translateX(0);
     }
     
-    .nav-menu.btn-group .btn {
+    .radio-inputs .radio {
+        flex: none;
+        margin: 0.5rem 0;
+    }
+    
+    .radio-inputs .radio .name {
         padding: 1rem 1.5rem;
         text-align: center;
         font-size: 1.1rem;
-        border-radius: 20px !important;
-        margin: 0.25rem 0;
         width: 100%;
-    }
-    
-    .nav-menu.btn-group .btn.left,
-    .nav-menu.btn-group .btn.middle,
-    .nav-menu.btn-group .btn.right {
-        border-radius: 20px !important;
+        min-height: auto;
+        border-radius: 18px;
     }
     
     .nav-toggle {
         display: flex;
+        z-index: 1001;
     }
     
     .nav-cta {
-        position: fixed;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1002;
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    
-    .nav-menu.active ~ .nav-cta {
+        position: relative;
         opacity: 1;
         pointer-events: auto;
     }
+    
     
     .logo-text {
         font-size: 1.6rem;
@@ -2126,6 +2628,13 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.intro-cta {
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 1.8s forwards;
 }
 
 .intro-block[data-delay="1"] {
@@ -2863,7 +3372,7 @@ body {
 
 .cta-primary .button-text {
     padding: 0 1.5rem 0 1rem;
-    color: var(--text-dark);
+    color: #fff;
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -2905,6 +3414,15 @@ body {
 .cta-primary:hover .button-text {
     color: #fff;
     opacity: 1;
+}
+
+/* Variante avec texte sombre */
+.cta-primary.cta-dark-text .button-text {
+    color: var(--text-dark);
+}
+
+.cta-primary.cta-dark-text:hover .button-text {
+    color: #fff;
 }
 
 .cta-decoration {
@@ -3067,6 +3585,25 @@ body {
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .malt-rating {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    
+    .malt-svg {
+        height: 18px;
+    }
+    
+    .rating-text {
+        font-size: 11px;
     }
     
     .video-container {
