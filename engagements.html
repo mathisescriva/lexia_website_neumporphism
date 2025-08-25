@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Engagements - Lexia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <div class="logo-container" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                    <img src="logo-2.webp" alt="Lexia Logo" class="logo-image">
+                </div>
+            </div>
+
+            <!-- Menu desktop -->
+            <div class="radio-inputs" id="navMenu">
+                <label class="radio">
+                    <input name="navigation" type="radio" value="accueil" onclick="window.location.href='index.html'" />
+                    <span class="name">Accueil</span>
+                </label>
+                <label class="radio">
+                    <input name="navigation" type="radio" value="diagnostic" onclick="window.location.href='diagnostic.html'" />
+                    <span class="name">Diagnostic IA</span>
+                </label>
+                <label class="radio">
+                    <input name="navigation" type="radio" value="services" onclick="window.location.href='services.html'" />
+                    <span class="name">Solutions métier IA</span>
+                </label>
+                <label class="radio">
+                    <input name="navigation" type="radio" value="apropos" />
+                    <span class="name">À propos</span>
+                </label>
+                <label class="radio">
+                    <input name="navigation" type="radio" value="contact" />
+                    <span class="name">Contact</span>
+                </label>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta">
+                <button class="btn cta-btn" id="navCtaBtn">
+                    <span>Démo gratuite</span>
+                </button>
+            </div>
+
+            <!-- Menu mobile toggle -->
+            <div class="nav-toggle" id="navToggle">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Fond animé dégradé -->
+        <div class="animated-background">
+            <div class="gradient-orb gradient-orb-1"></div>
+            <div class="gradient-orb gradient-orb-2"></div>
+            <div class="gradient-orb gradient-orb-3"></div>
+            <div class="gradient-orb gradient-orb-4"></div>
+        </div>
+
+        <!-- Section Hero Engagements -->
+        <section class="engagements-hero">
+            <div class="container">
+                <div class="engagements-hero-content">
+                    <h1 class="engagements-title">
+                        Nos <span class="title-highlight">Engagements</span>
+                    </h1>
+                    <p class="engagements-subtitle">
+                        Découvrez les valeurs et les promesses qui guident notre mission d'accompagner les TPE/PME vers l'IA responsable et accessible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section France Num -->
+        <section class="france-num-section">
+            <div class="container">
+                <div class="france-num-split">
+                    <!-- Image à gauche -->
+                    <div class="france-num-image">
+                        <div class="image-container">
+                            <img src="france_num.png" alt="Lexia - Activateur France Num" class="france-num-logo" />
+                        </div>
+                    </div>
+                    
+                    <!-- Contenu à droite -->
+                    <div class="france-num-content">
+                        <h3 class="france-num-title">Activateur <span class="title-highlight">France Num</span></h3>
+                        <p class="france-num-description">
+                            Nous sommes fiers d'être <strong>Activateur France Num</strong>, le programme national de transformation numérique des entreprises. 
+                            Cette reconnaissance valide notre expertise dans l'accompagnement des <span class="highlight-emphasis">TPE/PME</span> vers l'adoption de solutions IA concrètes et accessibles.
+                        </p>
+                        
+                        <div class="engagement-details">
+                            <div class="engagement-item">
+                                <div class="engagement-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5"/>
+                                        <path d="M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <div class="engagement-text">
+                                    <h4>Reconnaissance officielle</h4>
+                                    <p>Certifié par l'État français pour accompagner la transformation numérique</p>
+                                </div>
+                            </div>
+                            <div class="engagement-item">
+                                <div class="engagement-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="m9 12 2 2 4-4"/>
+                                    </svg>
+                                </div>
+                                <div class="engagement-text">
+                                    <h4>Expertise validée</h4>
+                                    <p>Plus de 1000 collaborateurs TPE/PME accompagnés avec succès</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section AMI Sphère Publique -->
+        <section class="ami-section">
+            <div class="container">
+                <div class="ami-split">
+                    <!-- Contenu à gauche -->
+                    <div class="ami-content">
+                        <h3 class="ami-title">Sélectionnés pour l'<span class="title-highlight">AMI IA Sphère Publique</span></h3>
+                        <p class="ami-description">
+                            Lexia a été sélectionnée parmi les lauréats de l'<strong>Appel à Manifestation d'Intérêt IA pour la sphère publique</strong>, 
+                            initié par Clara Chappaz, Ministre Déléguée chargée de l'Intelligence Artificielle et du Numérique. 
+                            Cette reconnaissance nous permet de contribuer à la transformation numérique des administrations publiques.
+                        </p>
+                        
+                        <div class="ami-details">
+                            <div class="ami-item">
+                                <div class="ami-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5"/>
+                                        <path d="M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <div class="ami-text">
+                                    <h4>Solutions référencées</h4>
+                                    <p>Nos solutions IA sont désormais disponibles dans le catalogue officiel des administrations publiques</p>
+                                </div>
+                            </div>
+                            <div class="ami-item">
+                                <div class="ami-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                    </svg>
+                                </div>
+                                <div class="ami-text">
+                                    <h4>Collaboration publique</h4>
+                                    <p>Participer à la modernisation des services publics avec des solutions IA innovantes</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ami-cta">
+                            <a href="https://www.linkedin.com/posts/mathis-escriva-45905a221_f%C3%A9licitations-aux-laur%C3%A9ats-de-lappel-activity-7358417368915533824-_g-G?utm_source=share&utm_medium=member_desktop&rcm=ACoAADe26wUBbi_n6ZubYiw9541MoHlHjasJAsw" target="_blank" class="ami-link">
+                                <button class="btn ami-btn">
+                                    <span>Voir l'annonce officielle</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 7h10v10"/>
+                                        <path d="M7 17 17 7"/>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Image à droite -->
+                    <div class="ami-image">
+                        <div class="image-container">
+                            <img src="photo_AMI.png" alt="Lexia - Lauréat AMI IA Sphère Publique" class="ami-logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Engagements Réglementaires -->
+        <section class="regulatory-section">
+            <div class="container">
+                <h2 class="section-title">Nos <span class="title-highlight">Engagements Réglementaires</span></h2>
+                
+                <div class="regulatory-grid">
+                    <div class="regulatory-card">
+                        <div class="regulatory-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                            </svg>
+                        </div>
+                        <h3>Conformité RGPD</h3>
+                        <p>Nous nous engageons à respecter scrupuleusement le Règlement Général sur la Protection des Données, garantissant la protection et la confidentialité de vos données personnelles.</p>
+                    </div>
+                    
+                    <div class="regulatory-card">
+                        <div class="regulatory-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Souveraineté numérique</h3>
+                        <p>Nos solutions privilégient les infrastructures et technologies européennes, garantissant la souveraineté numérique de vos données et de vos processus.</p>
+                    </div>
+                    
+                    <div class="regulatory-card">
+                        <div class="regulatory-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                <circle cx="12" cy="16" r="1"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3>Sécurité des données</h3>
+                        <p>Nous mettons en œuvre les plus hauts standards de sécurité pour protéger vos données sensibles, avec chiffrement et audits réguliers.</p>
+                    </div>
+                    
+                    <div class="regulatory-card">
+                        <div class="regulatory-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2"/>
+                                <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2"/>
+                                <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2"/>
+                                <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2"/>
+                            </svg>
+                        </div>
+                        <h3>Éthique et transparence</h3>
+                        <p>Nos solutions IA sont développées avec des principes éthiques stricts, garantissant transparence et responsabilité dans tous nos processus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos Valeurs -->
+        <section class="valeurs-section">
+            <div class="container">
+                <h2 class="section-title">Nos <span class="title-highlight">Valeurs</span></h2>
+                
+                <div class="valeurs-grid">
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="m22 21-2-2"/>
+                                <path d="m16 16 2 2"/>
+                            </svg>
+                        </div>
+                        <h3>Accompagnement personnalisé</h3>
+                        <p>Chaque entreprise est unique. Nous adaptons nos solutions à vos besoins spécifiques et à votre rythme d'évolution.</p>
+                    </div>
+                    
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                <circle cx="12" cy="16" r="1"/>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                            </svg>
+                        </div>
+                        <h3>IA responsable</h3>
+                        <p>Nous développons des solutions éthiques, transparentes et respectueuses de la vie privée de vos données.</p>
+                    </div>
+                    
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v18h18"/>
+                                <path d="m9 9 3 3 3-3"/>
+                                <path d="m9 15 3-3 3 3"/>
+                            </svg>
+                        </div>
+                        <h3>Résultats mesurables</h3>
+                        <p>Nous nous engageons à démontrer la valeur ajoutée de nos solutions avec des métriques concrètes et tangibles.</p>
+                    </div>
+                    
+                    <div class="valeur-card">
+                        <div class="valeur-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M2 12h20"/>
+                                <path d="m9 9 3 3 3-3"/>
+                                <path d="m9 15 3-3 3 3"/>
+                            </svg>
+                        </div>
+                        <h3>Innovation durable</h3>
+                        <p>Nous privilégions des technologies durables et des solutions qui s'inscrivent dans la durée pour votre entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos Promesses -->
+        <section class="promesses-section">
+            <div class="container">
+                <h2 class="section-title">Nos <span class="title-highlight">Promesses</span></h2>
+                
+                <div class="promesses-list">
+                    <div class="promesse-item">
+                        <div class="promesse-number">01</div>
+                        <div class="promesse-content">
+                            <h3>Simplicité d'utilisation</h3>
+                            <p>Nos solutions sont conçues pour être intuitives et accessibles, sans nécessiter de compétences techniques avancées.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promesse-item">
+                        <div class="promesse-number">02</div>
+                        <div class="promesse-content">
+                            <h3>Rapidité de déploiement</h3>
+                            <p>Nous vous proposons des solutions qui s'intègrent rapidement à vos processus existants, sans bouleverser votre organisation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promesse-item">
+                        <div class="promesse-number">03</div>
+                        <div class="promesse-content">
+                            <h3>Support continu</h3>
+                            <p>Notre équipe reste à vos côtés pour vous accompagner dans l'évolution et l'optimisation de vos solutions IA.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promesse-item">
+                        <div class="promesse-number">04</div>
+                        <div class="promesse-content">
+                            <h3>ROI garanti</h3>
+                            <p>Nous nous engageons à ce que nos solutions génèrent un retour sur investissement mesurable dans les 6 premiers mois.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Prêt à transformer votre entreprise ?</h2>
+                    <p>Découvrez comment nos engagements se traduisent en solutions concrètes pour votre métier.</p>
+                    <div class="cta-buttons">
+                        <button class="btn cta-btn-primary" onclick="window.location.href='index.html'">
+                            <span>Retour à l'accueil</span>
+                        </button>
+                        <button class="btn cta-btn-secondary" onclick="window.location.href='services.html'">
+                            <span>Découvrir nos solutions</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
