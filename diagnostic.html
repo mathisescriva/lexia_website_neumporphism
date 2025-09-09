@@ -16,40 +16,15 @@
         <div class="nav-container">
             <!-- Logo -->
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo-2.webp" alt="Lexia Logo" class="logo-image">
-                </div>
+                <img src="logo-2.webp" alt="Lexia Logo" class="logo-image">
             </div>
 
             <!-- Menu desktop -->
-            <div class="radio-inputs" id="navMenu">
-                <label class="radio">
-                    <input name="navigation" type="radio" value="accueil" />
-                    <span class="name">Accueil</span>
-                </label>
-                <label class="radio">
-                    <input checked="" name="navigation" type="radio" value="diagnostic" />
-                    <span class="name">Diagnostic IA</span>
-                </label>
-                <label class="radio">
-                    <input name="navigation" type="radio" value="services" />
-                    <span class="name">Solutions métier IA</span>
-                </label>
-                <label class="radio">
-                    <input name="navigation" type="radio" value="apropos" />
-                    <span class="name">À propos</span>
-                </label>
-                <label class="radio">
-                    <input name="navigation" type="radio" value="contact" />
-                    <span class="name">Contact</span>
-                </label>
-            </div>
-
-            <!-- CTA Button -->
-            <div class="nav-cta">
-                <button class="btn cta-btn" id="navCtaBtn">
-                    <span>Démo gratuite</span>
-                </button>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="diagnostic.html" class="nav-link active">Diagnostic IA</a>
+                <a href="services.html" class="nav-link">Solutions métier IA</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
 
             <!-- Menu mobile toggle -->
@@ -116,7 +91,7 @@
                     
                     <div class="hero-image-section">
                         <div class="hero-image-container">
-                            <img src="equipe.jpg" alt="Équipe Lexia - Diagnostic IA collaboratif" class="hero-team-image">
+                            <img src="roadmap.png" alt="Roadmap IA - Diagnostic collaboratif" class="hero-team-image">
                             <div class="hero-image-overlay">
                                 <div class="hero-badge">
                                     <span class="badge-icon">
@@ -741,31 +716,8 @@
         </div>
     </footer>
 
-    <!-- Modal de contact -->
-    <div class="modal-overlay" id="contactModal">
-        <div class="modal-content">
-            <span class="modal-close" id="closeModal">&times;</span>
-            <h2>Lancer votre diagnostic IA 360</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <input type="text" placeholder="Votre entreprise">
-                <select required>
-                    <option value="">Taille de votre organisation ?</option>
-                    <option value="startup">Startup (< 20 personnes)</option>
-                    <option value="pme">PME (20-250 personnes)</option>
-                    <option value="eti">ETI (250-5000 personnes)</option>
-                    <option value="grand-groupe">Grand groupe (> 5000 personnes)</option>
-                </select>
-                <textarea placeholder="Décrivez brièvement vos enjeux métier actuels" required></textarea>
-                <button type="submit" class="btn btn-primary">
-                    <span>Demander un diagnostic IA 360</span>
-                    <div class="btn-glow"></div>
-                </button>
-            </form>
-        </div>
-    </div>
 
     <script src="diagnostic.js"></script>
+    <script src="script.js"></script>
 </body>
 </html> 

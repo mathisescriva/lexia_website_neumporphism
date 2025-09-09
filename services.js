@@ -104,11 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.transform = '';
             }, 150);
             
-            // Détecter quel service
-            const serviceCard = this.closest('.service-card');
-            const serviceType = serviceCard ? serviceCard.getAttribute('data-service') : '';
-            
-            openContactModal(serviceType);
+            // Rediriger vers la page contact
+            window.location.href = 'contact.html';
         });
     });
     
@@ -117,7 +114,25 @@ document.addEventListener('DOMContentLoaded', function() {
     if (finalCtaBtn) {
         finalCtaBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            openContactModal('custom');
+            window.location.href = 'contact.html';
+        });
+    }
+    
+    // Boutons "Découvrir" pour chaque service
+    const stepsButtons = document.querySelectorAll('.steps-button');
+    stepsButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'contact.html';
+        });
+    });
+    
+    // Bouton "Prendre contact avec un expert"
+    const diagnosticBtn = document.querySelector('.diagnostic-btn');
+    if (diagnosticBtn) {
+        diagnosticBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'contact.html';
         });
     }
     

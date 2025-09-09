@@ -121,6 +121,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Bouton CTA final "Lancer votre diagnostic IA 360"
+    const finalCtaBtn = document.getElementById('finalCtaBtn');
+    if (finalCtaBtn) {
+        finalCtaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Rediriger vers la page contact
+            window.location.href = 'contact.html';
+        });
+    }
+    
+    // Boutons de bénéfices (informations uniquement, pas de clic)
+    const benefitBtns = document.querySelectorAll('.benefit-btn');
+    benefitBtns.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Animation de clic pour feedback visuel
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
+    
     // ====================================
     // EFFETS HOVER CARDS - DÉSACTIVÉS
     // ====================================

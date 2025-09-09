@@ -7,6 +7,7 @@
     position: relative;
     min-height: 100vh;
     width: 100%;
+    padding-top: 80px; /* Espace pour la navbar fixe */
 }
 
 /* ====================================
@@ -360,7 +361,17 @@
 }
 
 /* Responsive pour les boutons bénéfices */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-container {
+        padding-top: 75px; /* Espace pour la navbar tablette */
+    }
+}
+
 @media (max-width: 768px) {
+    .services-container {
+        padding-top: 70px; /* Espace pour la navbar mobile */
+    }
+    
     .benefits-buttons {
         gap: 0.8rem;
     }

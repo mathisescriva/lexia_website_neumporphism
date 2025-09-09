@@ -11,24 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarElement = document.querySelector('.navbar');
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    const navRadios = document.querySelectorAll('.radio-inputs .radio input');
-    const navCtaBtn = document.getElementById('navCtaBtn');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // Alternative directe pour le lien Services (fallback robuste)
-    const servicesRadio = document.querySelector('input[value="services"]');
-    if (servicesRadio) {
-        const servicesLabel = servicesRadio.closest('.radio');
-        if (servicesLabel) {
-            servicesLabel.style.cursor = 'pointer';
-            servicesLabel.addEventListener('click', function(e) {
-                console.log('🎯 Clic direct sur Services détecté');
-                // Petite pause pour laisser le radio se cocher
-                setTimeout(() => {
-                    window.location.href = 'services.html';
-                }, 100);
-            });
-        }
-    }
+    // Gestion des liens de navigation
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Fermer le menu mobile si ouvert
+            if (navMenu.classList.contains('active')) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
     
     // ====================================
     // EFFET SCROLL NAVBAR NEUMORPHIQUE
@@ -253,6 +247,56 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initRealisationsCarousel, 100);
     
     // ====================================
+    // GESTIONNAIRES POUR TOUS LES BOUTONS MANQUANTS
+    // ====================================
+    
+    // Bouton "Notre méthode, ensemble"
+    const methodBtn = document.getElementById('methodBtn');
+    if (methodBtn) {
+        methodBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Scroller vers la section méthode qui est juste en dessous
+            const methodSection = document.querySelector('.simple-steps-section');
+            if (methodSection) {
+                methodSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
+    
+    // Boutons "En savoir plus" des étapes de la méthode
+    const verticalCtaBtns = document.querySelectorAll('#verticalCtaBtn1, #verticalCtaBtn2, #verticalCtaBtn3');
+    verticalCtaBtns.forEach((btn, index) => {
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Rediriger vers la page contact
+                window.location.href = 'contact.html';
+            });
+        }
+    });
+    
+    // Bouton "Discuter de votre projet" (4ème étape)
+    const verticalCtaBtn4 = document.getElementById('verticalCtaBtn4');
+    if (verticalCtaBtn4) {
+        verticalCtaBtn4.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'contact.html';
+        });
+    }
+    
+    // Bouton "En savoir plus sur nos engagements"
+    const engagementsBtn = document.getElementById('engagementsBtn');
+    if (engagementsBtn) {
+        engagementsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'engagements.html';
+        });
+    }
+    
+    // ====================================
     // CTA SECTION RÉALISATIONS
     // ====================================
     
@@ -270,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const setupCarouselCardButtons = () => {
         // Tous les boutons "Découvrir le projet" / "Parlons-en ensemble"
-        const primaryButtons = document.querySelectorAll('.card__button.primary');
+        const primaryButtons = document.querySelectorAll('.card__button.primary, .card__button-discover');
         primaryButtons.forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -452,43 +496,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Gestion du modal de contact
-    const contactModal = document.getElementById('contactModal');
-    const closeModal = document.getElementById('closeModal');
     
     function openContactModal() {
-        if (contactModal) {
-            contactModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
+        window.location.href = 'contact.html';
     }
     
-    function closeContactModal() {
-        if (contactModal) {
-            contactModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    }
     
-    // Event listeners pour le modal
-    if (closeModal) {
-        closeModal.addEventListener('click', closeContactModal);
-    }
-    
-    if (contactModal) {
-        contactModal.addEventListener('click', function(e) {
-            if (e.target === contactModal) {
-                closeContactModal();
-            }
-        });
-        
-        // Fermeture avec Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && contactModal.classList.contains('active')) {
-                closeContactModal();
-            }
-        });
-    }
     
     // Gestion du formulaire de contact
     const contactForm = document.querySelector('.contact-form');
@@ -630,40 +643,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function() {
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
-            // Animation du bouton toggle
-            if (navToggle.classList.contains('active')) {
-                navToggle.style.transform = 'translateY(1px)';
-                navToggle.style.boxShadow = `
-                    2px 2px 4px rgba(255, 131, 95, 0.15),
-                    -2px -2px 4px rgba(255, 255, 255, 0.5),
-                    inset 6px 6px 12px rgba(255, 131, 95, 0.15),
-                    inset -6px -6px 12px rgba(255, 255, 255, 0.9)`;
-            } else {
-                navToggle.style.transform = '';
-                navToggle.style.boxShadow = '';
-            }
-        });
-    }
-    
-    // Gestion du menu mobile pour les radio buttons
-    navRadios.forEach(radio => {
-        radio.addEventListener('change', function(e) {
-            // Fermer le menu mobile si ouvert
-            if (navMenu.classList.contains('active')) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                navToggle.style.transform = '';
-                navToggle.style.boxShadow = '';
-            }
-        });
-    });
-    
-    // Bouton CTA navbar
-    if (navCtaBtn) {
-        navCtaBtn.addEventListener('click', function() {
-            // Même action que le bouton "Discuter avec nous"
-            openContactModal();
         });
     }
     
@@ -676,8 +655,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            navToggle.style.transform = '';
-            navToggle.style.boxShadow = '';
         }
     });
     
@@ -1278,4 +1255,60 @@ function initTestimonialsCarousel() {
     startAutoPlay();
     
     console.log('✅ Carousel témoignages initialisé !');
+}
+
+// ====================================
+// GESTIONNAIRES POUR TOUS LES BOUTONS MANQUANTS
+// ====================================
+
+// Boutons de navigation des témoignages
+const testimonialPrev = document.getElementById('testimonialPrev');
+const testimonialNext = document.getElementById('testimonialNext');
+const testimonialDots = document.querySelectorAll('.testimonials-dots .dot');
+
+if (testimonialPrev) {
+    testimonialPrev.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Logique de navigation précédente des témoignages
+        console.log('Navigation témoignage précédent');
+    });
+}
+
+if (testimonialNext) {
+    testimonialNext.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Logique de navigation suivante des témoignages
+        console.log('Navigation témoignage suivant');
+    });
+}
+
+// Dots de navigation des témoignages
+testimonialDots.forEach((dot, index) => {
+    dot.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Logique pour aller au témoignage spécifique
+        console.log('Aller au témoignage:', index);
+    });
+});
+
+// ====================================
+// GESTIONNAIRES POUR LES LIENS FOOTER
+// ====================================
+
+// Bouton CTA du footer
+const footerCta = document.querySelector('.footer-cta');
+if (footerCta) {
+    footerCta.addEventListener('click', function(e) {
+        e.preventDefault();
+        openContactModal();
+    });
+}
+
+// Bouton services du footer
+const footerServicesBtn = document.querySelector('.footer-services-btn');
+if (footerServicesBtn) {
+    footerServicesBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'services.html';
+    });
 } 

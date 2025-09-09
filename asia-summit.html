@@ -140,15 +140,24 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
+            <!-- Logo -->
             <div class="nav-logo">
-                <div class="logo-container">
-                    <img src="logo-2.webp" alt="Lexia Logo" class="logo-image">
-                </div>
+                <img src="logo-2.webp" alt="Lexia Logo" class="logo-image" onclick="window.location.href='index.html'" style="cursor: pointer;">
             </div>
-            <div class="nav-cta">
-                <a href="index.html" class="btn cta-btn">
-                    <span>Retour à l'accueil</span>
-                </a>
+
+            <!-- Menu desktop -->
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="diagnostic.html" class="nav-link">Diagnostic IA</a>
+                <a href="services.html" class="nav-link">Solutions métier IA</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Menu mobile toggle -->
+            <div class="nav-toggle" id="navToggle">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
             </div>
         </div>
     </nav>
@@ -259,5 +268,6 @@
             </a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
